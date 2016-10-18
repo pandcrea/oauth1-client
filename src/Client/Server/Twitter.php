@@ -50,13 +50,13 @@ class Twitter extends Server
         $user->name = $data['name'];
         $user->location = $data['location'];
         $user->description = $data['description'];
-        $user->imageUrl = $data['profile_image_url'];
+        $user->imageUrl = $data['profile_image_url_https'];
         $user->email = null;
         if (isset($data['email'])) {
             $user->email = $data['email'];
         }
 
-        $used = array('id', 'screen_name', 'name', 'location', 'description', 'profile_image_url', 'email');
+        $used = array('id', 'screen_name', 'name', 'location', 'description', 'profile_image_url_https', 'email');
 
         foreach ($data as $key => $value) {
             if (strpos($key, 'url') !== false) {
